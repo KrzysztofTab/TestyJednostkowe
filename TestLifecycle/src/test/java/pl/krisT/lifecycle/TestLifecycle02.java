@@ -1,16 +1,10 @@
-package pl.krisT;
+package pl.krisT.lifecycle;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-
-public class TestLifecycle03 {
+public class TestLifecycle02 {
     private int licznik = 0;
-
-    @BeforeAll
-    public static void initAll() {
-        System.out.println("Wykonuje BeforeAll");
-    }
 
     @BeforeEach
     public void init() {
@@ -34,14 +28,9 @@ public class TestLifecycle03 {
         System.out.println("Wykonuje test 3. Licznik to: " + licznik);
         licznik = 3;
     }
-
-    @AfterEach
-    public void after() {
-        System.out.println("Wykonuje AfterEach");
-    }
-
-    @AfterAll
-    public static void afterAll() {
-        System.out.println("Wykonuje AfterAll");
-    }
 }
+/*
+@AfterEach - metoda oznaczona taką adnotacją zostanie uruchomiona po każdym teście
+@BeforeAll - metoda zostanie uruchomiona raz przed wszystkimi testami w klasie
+@AfterAll - metoda zostanie uruchomiona raz, po wszystkimi testami w klasie
+ */

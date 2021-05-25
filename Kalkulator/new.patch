@@ -1,0 +1,210 @@
+Index: Kalkulator/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/pom.xml b/Kalkulator/pom.xml
+new file mode 100644
+--- /dev/null	(date 1621882135816)
++++ b/Kalkulator/pom.xml	(date 1621882135816)
+@@ -0,0 +1,24 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <groupId>org.example</groupId>
++    <artifactId>Kalkulator</artifactId>
++    <version>1.0-SNAPSHOT</version>
++
++    <properties>
++        <maven.compiler.source>16</maven.compiler.source>
++        <maven.compiler.target>16</maven.compiler.target>
++    </properties>
++    <dependencies>
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter-api</artifactId>
++            <version>5.7.2</version>
++            <scope>test</scope>
++        </dependency>
++    </dependencies>
++
++</project>
+\ No newline at end of file
+Index: Kalkulator/.idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/.idea/compiler.xml b/Kalkulator/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1621882196268)
++++ b/Kalkulator/.idea/compiler.xml	(date 1621882196268)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile name="Maven default annotation processors profile" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <module name="Kalkulator" />
++      </profile>
++    </annotationProcessing>
++  </component>
++</project>
+\ No newline at end of file
+Index: Kalkulator/.idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/.idea/jarRepositories.xml b/Kalkulator/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1621882196291)
++++ b/Kalkulator/.idea/jarRepositories.xml	(date 1621882196291)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: Kalkulator/src/main/java/pl/krisT/TestKalkulator/Calculator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/src/main/java/pl/krisT/TestKalkulator/Calculator.java b/Kalkulator/src/main/java/pl/krisT/TestKalkulator/Calculator.java
+new file mode 100644
+--- /dev/null	(date 1621882341602)
++++ b/Kalkulator/src/main/java/pl/krisT/TestKalkulator/Calculator.java	(date 1621882341602)
+@@ -0,0 +1,7 @@
++package pl.krisT.TestKalkulator;
++
++public class Calculator {
++    public int add(int a , int b) {
++        return a + b;
++    }
++}
+Index: Kalkulator/src/test/java/pl/krisT/TestKalkulator/CalculatorTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/src/test/java/pl/krisT/TestKalkulator/CalculatorTest.java b/Kalkulator/src/test/java/pl/krisT/TestKalkulator/CalculatorTest.java
+new file mode 100644
+--- /dev/null	(date 1621882397880)
++++ b/Kalkulator/src/test/java/pl/krisT/TestKalkulator/CalculatorTest.java	(date 1621882397880)
+@@ -0,0 +1,37 @@
++package pl.krisT.TestKalkulator;
++
++import org.junit.jupiter.api.Assertions;
++import org.junit.jupiter.api.Test;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++class CalculatorTest {
++
++    @Test
++    public void shouldAdd1To1AndReturn2() {
++        // given - przygotowanie danych testowych i środowiska
++        int a = 1;
++        int b = 1;
++        Calculator calculator = new Calculator();
++
++        // when - wykonanie kodu który chcemy przetestować czy działa poprawnie
++        int result = calculator.add(a, b);
++
++        // then - sprawdzenie czy wynik jest taki jak się spodziewamy
++        Assertions.assertEquals(2, result);
++    }
++
++    @Test
++    public void shouldAdd5To2AndReturn7() {
++        // given - przygotowanie danych testowych i środowiska
++        int a = 5;
++        int b = 2;
++        Calculator calculator = new Calculator();
++
++        // when - wykonanie kodu który chcemy przetestować czy działa poprawnie
++        int result = calculator.add(a, b);
++
++        // then - sprawdzenie czy wynik jest taki jak się spodziewamy
++        Assertions.assertEquals(7, result);
++    }
++}
+\ No newline at end of file
+Index: Kalkulator/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/.idea/misc.xml b/Kalkulator/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1621882112270)
++++ b/Kalkulator/.idea/misc.xml	(date 1621882112270)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Kalkulator/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/.idea/vcs.xml b/Kalkulator/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1621882112297)
++++ b/Kalkulator/.idea/vcs.xml	(date 1621882112297)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Kalkulator/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kalkulator/.idea/.gitignore b/Kalkulator/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1621882116291)
++++ b/Kalkulator/.idea/.gitignore	(date 1621882116291)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml

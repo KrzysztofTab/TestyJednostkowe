@@ -1,4 +1,4 @@
-package pl.krisT;
+package pl.krisT.lifecycle;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
